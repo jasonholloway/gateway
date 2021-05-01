@@ -1,0 +1,9 @@
+[Unit]
+Description=Setup gateway IP forwarding
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /usr/local/bin/gateway-setup 
+
+[Install]
+WantedBy=network-pre.target

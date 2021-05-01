@@ -1,0 +1,6 @@
+#!/bin/sh
+modprobe iptable_nat
+echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING ! -s 127.0.0.1/8 ! -d 192.168.123.0/24 -j MASQUERADE
+#iptables -A FORWARD -i lan0 -j ACCEPT
+
